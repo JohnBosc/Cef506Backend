@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="aircraftDao" class="com.schedule.mvc.dao.impl.AircraftDaoImpl"/>
+    <bean id="aircraftService" class="com.schedule.mvc.services.impl.AircraftServiceImpl">
+        <property name="dao" ref="aircraftDao"></property>
+    </bean>
+
+    <bean id="airlineDao" class="com.schedule.mvc.dao.impl.AirlineDaoImpl"/>
+    <bean id="airlineService" class="com.schedule.mvc.services.impl.AirlineServiceImpl">
+        <property name="dao" ref="airlineDao"></property>
+    </bean>
+
+    <bean id="airportDao" class="com.schedule.mvc.dao.impl.AirportDaoImpl"/>
+    <bean id="airportService" class="com.schedule.mvc.services.impl.AirportServiceImpl">
+        <property name="dao" ref="airportDao"></property>
+    </bean>
+
+    <bean id="flightDao" class="com.schedule.mvc.dao.impl.FlightDaoImpl"/>
+    <bean id="flightService" class="com.schedule.mvc.services.impl.FlightServiceImpl">
+        <property name="dao" ref="flightDao"></property>
+    </bean>
+
+    <bean id="routeDao" class="com.schedule.mvc.dao.impl.RouteDaoImpl"/>
+    <bean id="routeService" class="com.schedule.mvc.services.impl.RouteServiceImpl">
+        <property name="dao" ref="routeDao"></property>
+    </bean>
+
+
+</beans>

@@ -43,4 +43,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <context:annotation-config></context:annotation-config>
+
+    <!-- Beans declaration -->
+    <import resource="classpath:config/beans-config.xml"/>
 </beans>
