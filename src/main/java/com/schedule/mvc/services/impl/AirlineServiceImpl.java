@@ -38,12 +38,12 @@ public class AirlineServiceImpl implements IAirlineService {
     }
 
     @Override
-    public Airline getById(int id) {
+    public Airline getById(Long id) {
         return dao.getById(id);
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(Long id) {
         dao.remove(id);
     }
 

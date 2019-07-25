@@ -14,9 +14,9 @@ public interface IFlightService {
 
     public List<Flight> selectAll(String sortField, String sort);
 
-    public Flight getById(int id);
+    public Flight getById(Long id);
 
-    public void remove(int id);
+    public void remove(Long id);
 
     public Flight findOne(String paramName, Object paramValue);
 

@@ -10,7 +10,7 @@ public class Airline implements Serializable {
 
     @Id
     @GeneratedValue
-    private int airline_id;
+    private Long airline_id;
 
     private String name;
 
@@ -25,6 +25,10 @@ public class Airline implements Serializable {
     private String country;
 
     private char active;
+
+
+    @OneToMany(mappedBy = "airline")
+    private List<Route> routes;
 
 
     @ManyToOne
@@ -42,12 +46,21 @@ public class Airline implements Serializable {
     }
 
 
-    public int getAirline_id() {
+    public Long getAirline_id() {
         return airline_id;
     }
 
-    public void setAirline_id(int airline_id) {
+    public void setAirline_id(Long airline_id) {
         this.airline_id = airline_id;
+    }
+
+
+    public List<Route> getRoutes() {
+        return routes;
+    }
+
+    public void setRoutes(List<Route> routes) {
+        this.routes = routes;
     }
 
     public String getName() {

@@ -10,7 +10,7 @@ public class Aircraft implements Serializable {
 
     @Id
     @GeneratedValue
-    private int aircraft_id;
+    private Long aircraft_id;
 
     private String aircraft_code;
 
@@ -32,11 +32,11 @@ public class Aircraft implements Serializable {
     }
 
 
-    public int getAircraft_id() {
+    public Long getAircraft_id() {
         return aircraft_id;
     }
 
-    public void setAircraft_id(int aircraft_id) {
+    public void setAircraft_id(Long aircraft_id) {
         this.aircraft_id = aircraft_id;
     }
 

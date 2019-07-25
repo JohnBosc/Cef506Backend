@@ -12,7 +12,7 @@ public class Flight implements Serializable {
 
     @Id
     @GeneratedValue
-    private int flight_id;
+    private Long flight_id;
 
     private String flight_code;
 
@@ -24,8 +24,6 @@ public class Flight implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date date;
 
-    @OneToOne(mappedBy = "flight")
-    private Route route;
 
     @ManyToOne
     @JoinColumn(name = "airport_id")
@@ -39,11 +37,11 @@ public class Flight implements Serializable {
     public Flight() {
     }
 
-    public int getFlight_id() {
+    public Long getFlight_id() {
         return flight_id;
     }
 
-    public void setFlight_id(int flight_id) {
+    public void setFlight_id(Long flight_id) {
         this.flight_id = flight_id;
     }
 
@@ -77,14 +75,6 @@ public class Flight implements Serializable {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public Route getRoute() {
-        return route;
-    }
-
-    public void setRoute(Route route) {
-        this.route = route;
     }
 
     public Airport getAirport() {

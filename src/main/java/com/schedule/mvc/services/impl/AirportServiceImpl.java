@@ -38,12 +38,12 @@ public class AirportServiceImpl implements IAirportService {
     }
 
     @Override
-    public Airport getById(int id) {
+    public Airport getById(Long id) {
         return dao.getById(id);
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(Long id) {
         dao.remove(id);
     }
 

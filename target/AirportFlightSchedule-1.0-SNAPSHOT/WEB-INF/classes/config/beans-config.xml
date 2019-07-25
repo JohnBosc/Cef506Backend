@@ -28,5 +28,4 @@
         <property name="dao" ref="routeDao"></property>
     </bean>
 
-
 </beans>

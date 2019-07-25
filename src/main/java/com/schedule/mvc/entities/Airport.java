@@ -11,7 +11,7 @@ public class Airport implements Serializable {
 
     @Id
     @GeneratedValue
-    private int airport_id;
+    private Long airport_id;
 
     private String name;
 
@@ -23,7 +23,7 @@ public class Airport implements Serializable {
 
     private String icao;
 
-    private Float timezone;
+    private String timezone;
 
 
     @OneToMany(mappedBy = "airport")
@@ -32,8 +32,6 @@ public class Airport implements Serializable {
     @OneToMany(mappedBy = "airport")
     private List<Flight> flights;
 
-    @OneToMany(mappedBy = "airport")
-    private List<Route> routes;
 
 
     //constructor
@@ -41,11 +39,11 @@ public class Airport implements Serializable {
     }
 
 
-    public int getAirport_id() {
+    public Long getAirport_id() {
         return airport_id;
     }
 
-    public void setAirport_id(int airport_id) {
+    public void setAirport_id(Long airport_id) {
         this.airport_id = airport_id;
     }
 
@@ -89,11 +87,11 @@ public class Airport implements Serializable {
         this.icao = icao;
     }
 
-    public Float getTimezone() {
+    public String getTimezone() {
         return timezone;
     }
 
-    public void setTimezone(Float timezone) {
+    public void setTimezone(String timezone) {
         this.timezone = timezone;
     }
 
@@ -113,11 +111,4 @@ public class Airport implements Serializable {
         this.flights = flights;
     }
 
-    public List<Route> getRoutes() {
-        return routes;
-    }
-
-    public void setRoutes(List<Route> routes) {
-        this.routes = routes;
-    }
 }

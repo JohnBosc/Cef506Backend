@@ -14,9 +14,9 @@ public interface IAirportService {
 
     public List<Airport> selectAll(String sortField, String sort);
 
-    public Airport getById(int id);
+    public Airport getById(Long id);
 
-    public void remove(int id);
+    public void remove(Long id);
 
     public Airport findOne(String paramName, Object paramValue);
 

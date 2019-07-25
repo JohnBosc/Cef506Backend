@@ -38,12 +38,12 @@ public class FlightServiceImpl implements IFlightService {
     }
 
     @Override
-    public Flight getById(int id) {
+    public Flight getById(Long id) {
         return dao.getById(id);
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(Long id) {
         dao.remove(id);
     }
 

@@ -1,0 +1,88 @@
+
+
+
+/*Add form CSS*/
+select.form-fixer, input.form-fixer{
+	padding: 10px!important;
+	font-size: 13px!important;
+}
+
+.form-add{background: #FFFFFF!important;
+	border-radius: 10px!important;
+	text-align: left!important;
+	width: 50%!important;
+	padding: 20px!important; font-size: 13px!important;}
+
+.form-gmt{padding: 0 10px!important; font-size: 12px!important;}
+
+.form-horizontal .form-group input,
+.form-horizontal .form-group select,
+.form-horizontal .form-group label
+{
+	height: 14px !important;
+	line-height: 14px !important;
+}
+
+/*End add forms css*/
+
+
+
+#content-wrapper {background: url("../images/bga.jpg") no-repeat!important;
+	background-size: cover!important; height: 100vh!important;
+}
+
+h1.text-gray-800{color: #FFFFFF!important; text-align: left!important; }
+
+nav.bcr{text-align: left!important; width: 80%!important;}
+
+ol.breadcrumb{background: rgba(0,0,0,0.3)!important; padding: 1px!important; text-align: left!important; color: #FFFFFF!important;}
+
+ol.breadcrumb li a {
+	color: #FFFFFF!important; font-size: 12px!important;}
+
+li.breadcrumb-item{color: #FFFFFF!important;}
+
+/*.breadcrumb > .active a {color: #446AD8!important;}*/
+
+.bg{
+	background: url('../images/bg1.jpg') no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+	
+}
+
+input, a.tb, select, button {
+	border-radius: 0!important;
+}
+
+select {background: transparent!important; text-align: center!important;}
+
+input, selector { padding: 18px 15px !important;}
+
+.form-contain{
+	border: 1px solid #D3E8EB;
+	padding: 40px 60px;
+	margin-top: 5vh;
+-webkit-box-shadow: -1px 4px 26px 11px rgba(211,232,235,0.75);
+-moz-box-shadow:-1px 4px 26px 11px rgba(211,232,235,0.75);
+box-shadow:-1px 4px 26px 11px rgba(211,232,235,0.75);
+	background: rgba(255, 255, 255, 0.75);
+	border-radius: 10px;
+}
+
+label{color: grey;}
+
+h2.title{
+	border: 1px solid #D3E8EB;
+	padding: 10px 15px;
+	margin-top: 10vh;
+	text-align:center;
+	color: #fff;
+-webkit-box-shadow: -1px 4px 26px 11px rgba(211,232,235,0.75);
+-moz-box-shadow:-1px 4px 26px 11px rgba(211,232,235,0.75);
+	box-shadow:-1px 4px 26px 11px rgba(211,232,235,0.75);
+	background: rgba(38,153,251, 0.75);
+	border-radius: 10px;
+}
+

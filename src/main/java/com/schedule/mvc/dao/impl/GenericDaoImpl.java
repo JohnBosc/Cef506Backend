@@ -29,7 +29,7 @@ public class GenericDaoImpl<E> implements IGenericDao<E> {
 
     @Override
     public E save(E entity) {
-        em.persist(entity);
+        em.merge(entity);
         return entity;
     }
 
@@ -51,12 +51,12 @@ public class GenericDaoImpl<E> implements IGenericDao<E> {
     }
 
     @Override
-    public E getById(int id) {
+    public E getById(Long id) {
         return em.find(type, id);
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(Long id) {
         E tab = em.getReference(type, id);
         em.remove(tab);
     }

@@ -14,9 +14,9 @@ public interface IAirlineService {
 
     public List<Airline> selectAll(String sortField, String sort);
 
-    public Airline getById(int id);
+    public Airline getById(Long id);
 
-    public void remove(int id);
+    public void remove(Long id);
 
     public Airline findOne(String paramName, Object paramValue);
 

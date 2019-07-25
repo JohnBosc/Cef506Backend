@@ -2,6 +2,8 @@ package com.schedule.mvc.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "route")
@@ -10,19 +12,16 @@ public class Route implements Serializable {
 
     @Id
     @GeneratedValue
-    private int route_id;
-
-    private String airline_iata;
-
-    private String srcAirport;
-
-    private int srcAirport_id;
-
-    private String dstAirport_iata;
-
-    private int dstAirport_id;
+    private Long route_id;
 
     private int stops;
+
+
+
+
+    @ManyToOne
+    @JoinColumn(name = "airline_id")
+    private Airline airline;
 
 
     @OneToOne
@@ -33,9 +32,15 @@ public class Route implements Serializable {
     @JoinColumn(name = "aircraft_id")
     private Aircraft aircraft;
 
-    @ManyToOne
-    @JoinColumn(name = "airport_id")
-    private Airport airport;
+    @ManyToMany
+    @JoinTable(
+            name = "Route_Airport",
+            joinColumns = {@JoinColumn(name = "Route_route_id", referencedColumnName = "route_id")},
+            inverseJoinColumns = {@JoinColumn(name = "Airport_airport_id", referencedColumnName = "airport_id")}
+    )
+    private Collection<Airport> airports;
+
+
 
 
 
@@ -44,53 +49,23 @@ public class Route implements Serializable {
     }
 
 
-    public int getRoute_id() {
+    public Long getRoute_id() {
         return route_id;
     }
 
-    public void setRoute_id(int route_id) {
+    public void setRoute_id(Long route_id) {
         this.route_id = route_id;
     }
 
-    public String getAirline_iata() {
-        return airline_iata;
+
+    public Airline getAirline() {
+        return airline;
     }
 
-    public void setAirline_iata(String airline_iata) {
-        this.airline_iata = airline_iata;
+    public void setAirline(Airline airline) {
+        this.airline = airline;
     }
 
-    public String getSrcAirport() {
-        return srcAirport;
-    }
-
-    public void setSrcAirport(String srcAirport) {
-        this.srcAirport = srcAirport;
-    }
-
-    public int getSrcAirport_id() {
-        return srcAirport_id;
-    }
-
-    public void setSrcAirport_id(int srcAirport_id) {
-        this.srcAirport_id = srcAirport_id;
-    }
-
-    public String getDstAirport_iata() {
-        return dstAirport_iata;
-    }
-
-    public void setDstAirport_iata(String dstAirport_iata) {
-        this.dstAirport_iata = dstAirport_iata;
-    }
-
-    public int getDstAirport_id() {
-        return dstAirport_id;
-    }
-
-    public void setDstAirport_id(int dstAirport_id) {
-        this.dstAirport_id = dstAirport_id;
-    }
 
     public int getStops() {
         return stops;
@@ -116,12 +91,12 @@ public class Route implements Serializable {
         this.aircraft = aircraft;
     }
 
-    public Airport getAirport() {
-        return airport;
+    public Collection<Airport> getAirports() {
+        return airports;
     }
 
-    public void setAirport(Airport airport) {
-        this.airport = airport;
+    public void setAirports(Collection<Airport> airports) {
+        this.airports = airports;
     }
 }
 

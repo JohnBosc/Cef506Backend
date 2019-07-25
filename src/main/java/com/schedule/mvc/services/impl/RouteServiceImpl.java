@@ -38,12 +38,12 @@ public class RouteServiceImpl implements IRouteService {
     }
 
     @Override
-    public Route getById(int id) {
+    public Route getById(Long id) {
         return dao.getById(id);
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(Long id) {
         dao.remove(id);
     }
 
